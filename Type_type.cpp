@@ -1229,7 +1229,18 @@ class FIRE_MARYO: public Type
     }
 	  void Action_Shoot(cPlayer& cp)
     {
-        return;
+        ball_effect ball_type = FIREBALL_DEFAULT;
+        unsigned int ball_amount = 1;
+
+	// if star add another ball
+	if( cp->invincible_star )
+	{
+		ball_amount = 2;
+	}
+	if( cp->Ball_Add( ball_type, -1, ball_amount ) )
+	{
+		cp->throwing_counter = speedfactor_fps * 0.3f;
+	}
     }
 	  void Ball_Add(cPlayer& cp)
     {
@@ -1436,7 +1447,18 @@ class ICE_MARYO: public Type
     }
 	  void Action_Shoot(cPlayer& cp)
     {
-        return;
+        ball_effect ball_type = ICEBALL_DEFAULT;
+        unsigned int ball_amount = 1;
+
+	// if star add another ball
+	if( cp->invincible_star )
+	{
+		ball_amount = 2;
+	}
+	if( cp->Ball_Add( ball_type, -1, ball_amount ) )
+	{
+		cp->throwing_counter = speedfactor_fps * 0.3f;
+	}
     }
 	  void Ball_Add(cPlayer& cp)
     {
