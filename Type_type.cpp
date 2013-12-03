@@ -49,7 +49,81 @@ class DEAD_MARYO: public Type
         return;
     }
 	  void Draw_Animation(cPlayer& cp)
+	  
     {
+    	Maryo_type maryo_type = cp->maryo_type;
+    	
+    	if( new_mtype == maryo_type || maryo_type == MARYO_DEAD || new_mtype == MARYO_DEAD )
+	{
+		return;
+	}
+
+	Maryo_type maryo_type_old = maryo_type;
+	bool parachute_old = cp->parachute;
+
+	float posx_old = m_pos_x;
+	float posy_old = m_pos_y;
+
+	// Change_Size needs new state size
+	maryo_type = maryo_type_old;
+	cp->parachute = parachute_old;
+	Load_Images();
+
+	// correct position for bigger maryo
+	if( maryo_type_old == MARYO_SMALL && ( new_mtype == MARYO_BIG || new_mtype == MARYO_FIRE || new_mtype == MARYO_ICE || new_mtype == MARYO_CAPE || new_mtype == MARYO_GHOST ) )
+	{
+		Change_Size( -5.0f, -12.0f );
+	}
+	// correct position for small maryo
+	else if( ( maryo_type_old == MARYO_BIG || maryo_type_old == MARYO_FIRE || maryo_type_old == MARYO_ICE || new_mtype == MARYO_CAPE || maryo_type_old == MARYO_GHOST ) && new_mtype == MARYO_SMALL )
+	{
+		Change_Size( 5.0f, 12.0f );
+	}
+
+	float posx_new = m_pos_x;
+	float posy_new = m_pos_y;
+
+	// draw animation
+	for( unsigned int i = 0; i < 7; i++ )
+	{
+		// set to current type
+		if( i % 2 )
+		{
+			maryo_type = maryo_type_old;
+			cp->parachute = parachute_old;
+			Load_Images();
+			
+			Set_Pos( posx_old, posy_old );
+		}
+		// set to new type
+		else
+		{
+			maryo_type = new_mtype;
+			if( new_mtype != MARYO_CAPE )
+			{
+				cp->parachute = 0;
+			}
+			Load_Images();
+			
+			// always set the ghost type to draw the ghost rect until it ends
+			if( i < 6 && maryo_type_old == MARYO_GHOST )
+			{
+				maryo_type = maryo_type_old;
+			}
+
+			Set_Pos( posx_new, posy_new );
+		}
+
+		// draw
+		Draw_Game();
+		pVideo->Render();
+
+		// frame delay
+		SDL_Delay( 120 );
+	}
+
+	pFramerate->Reset();
+
         return;
     }
 	  int Get_Image(cPlayer& cp)
