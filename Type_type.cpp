@@ -53,19 +53,14 @@ class DEAD_MARYO: public Type
     {
     	Maryo_type maryo_type = cp->maryo_type;
     	
-    	if( new_mtype == maryo_type || maryo_type == MARYO_DEAD || new_mtype == MARYO_DEAD )
-	{
-		return;
-	}
-
-	Maryo_type maryo_type_old = maryo_type;
+	Maryo_type maryo_type_old = cp->maryo_type;
 	bool parachute_old = cp->parachute;
 
 	float posx_old = m_pos_x;
 	float posy_old = m_pos_y;
 
 	// Change_Size needs new state size
-	maryo_type = maryo_type_old;
+	cp->maryo_type = maryo_type_old;
 	cp->parachute = parachute_old;
 	Load_Images();
 
@@ -89,7 +84,7 @@ class DEAD_MARYO: public Type
 		// set to current type
 		if( i % 2 )
 		{
-			maryo_type = maryo_type_old;
+			cp->maryo_type = maryo_type_old;
 			cp->parachute = parachute_old;
 			Load_Images();
 			
@@ -98,7 +93,7 @@ class DEAD_MARYO: public Type
 		// set to new type
 		else
 		{
-			maryo_type = new_mtype;
+			cp->maryo_type = new_mtype;
 			if( new_mtype != MARYO_CAPE )
 			{
 				cp->parachute = 0;
@@ -108,7 +103,7 @@ class DEAD_MARYO: public Type
 			// always set the ghost type to draw the ghost rect until it ends
 			if( i < 6 && maryo_type_old == MARYO_GHOST )
 			{
-				maryo_type = maryo_type_old;
+				cp->maryo_type = maryo_type_old;
 			}
 
 			Set_Pos( posx_new, posy_new );
