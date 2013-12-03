@@ -313,7 +313,46 @@ class SMALL_MARYO: public Type
     }
 	  void Load_Image(cPlayer& cp)
     {
-        return;
+	cp->Clear_Images();
+
+	// special maryo images state
+	std::string special_state;
+	// if holding item
+	if( cp->active_object )
+	{
+		special_state = "_holding";
+	}
+			// standing
+		Add_Image( pVideo->Get_Surface( "maryo/small/stand_left" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/small/stand_right" + special_state + ".png" ) );
+		// walking
+		Add_Image( pVideo->Get_Surface( "maryo/small/walk_left_1" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/small/walk_right_1" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/small/walk_left_2" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/small/walk_right_2" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/small/walk_left_1" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/small/walk_right_1" + special_state + ".png" ) );
+		// running
+		Add_Image( NULL );
+		Add_Image( NULL );
+		Add_Image( NULL );
+		Add_Image( NULL );
+		// falling
+		Add_Image( pVideo->Get_Surface( "maryo/small/fall_left" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/small/fall_right" + special_state + ".png" ) );
+		// jumping
+		Add_Image( pVideo->Get_Surface( "maryo/small/jump_left" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/small/jump_right" + special_state + ".png" ) );
+		// dead
+		Add_Image( pVideo->Get_Surface( "maryo/small/dead_left.png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/small/dead_right.png" ) );
+		// ducked
+		Add_Image( pVideo->Get_Surface( "maryo/small/duck_left.png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/small/duck_right.png" ) );
+		// climbing
+		Add_Image( pVideo->Get_Surface( "maryo/small/climb_left.png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/small/climb_right.png" ) );
+        cp->Set_Image_Num( cp->Get_Image() + cp->m_direction );
     }
 	  void Action_Shoot(cPlayer& cp)
     {
@@ -466,7 +505,50 @@ class GHOST_MARYO: public Type
     }
 	  void Load_Image(cPlayer& cp)
     {
-        return;
+	cp->Clear_Images();
+
+	// special maryo images state
+	std::string special_state;
+	// if holding item
+	if( cp->active_object )
+	{
+		special_state = "_holding";
+	}
+			Add_Image( pVideo->Get_Surface( "maryo/ghost/stand_left" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/ghost/stand_right" + special_state + ".png" ) );
+		// walking
+		Add_Image( pVideo->Get_Surface( "maryo/ghost/walk_left_1" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/ghost/walk_right_1" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/ghost/walk_left_2" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/ghost/walk_right_2" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/ghost/walk_left_1" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/ghost/walk_right_1" + special_state + ".png" ) );
+		// running
+		Add_Image( NULL );
+		Add_Image( NULL );
+		Add_Image( NULL );
+		Add_Image( NULL );
+		// falling
+		Add_Image( pVideo->Get_Surface( "maryo/ghost/fall_left" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/ghost/fall_right" + special_state + ".png" ) );
+		// jumping
+		Add_Image( pVideo->Get_Surface( "maryo/ghost/jump_left" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/ghost/fall_right" + special_state + ".png" ) );
+		// dead
+		Add_Image( pVideo->Get_Surface( "maryo/small/dead_left.png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/small/dead_right.png" ) );
+		// ducked
+		Add_Image( pVideo->Get_Surface( "maryo/ghost/duck_left.png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/ghost/duck_right.png" ) );
+		// climbing
+		Add_Image( pVideo->Get_Surface( "maryo/ghost/climb_left.png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/ghost/climb_right.png" ) );
+		// throwing
+		Add_Image( NULL );
+		Add_Image( NULL );
+		Add_Image( NULL );
+		Add_Image( NULL );
+        cp->Set_Image_Num( cp->Get_Image() + cp->m_direction );
     }
 	  void Action_Shoot(cPlayer& cp)
     {
@@ -618,7 +700,63 @@ class CAPE_MARYO: public Type
     }
 	  void Load_Image(cPlayer& cp)
     {
-        return;
+	cp->Clear_Images();
+
+	// special maryo images state
+	std::string special_state;
+	// if holding item
+	if( cp->active_object )
+	{
+		special_state = "_holding";
+	}
+			// standing
+		Add_Image( pVideo->Get_Surface( "maryo/flying/left" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/flying/right" + special_state + ".png" ) );
+		// walking
+		Add_Image( pVideo->Get_Surface( "maryo/flying/walk_left_1" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/flying/walk_right_1" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/flying/walk_left_2" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/flying/walk_right_2" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/flying/walk_left_1" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/flying/walk_right_1" + special_state + ".png" ) );
+		// running
+		Add_Image( pVideo->Get_Surface( "maryo/flying/run_left_1" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/flying/run_right_1" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/flying/run_left_2" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/flying/run_right_2" + special_state + ".png" ) );
+		// falling
+		Add_Image( pVideo->Get_Surface( "maryo/flying/fall_left" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/flying/fall_right" + special_state + ".png" ) );
+		// jumping
+		Add_Image( pVideo->Get_Surface( "maryo/flying/jump_left" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/flying/fall_right" + special_state + ".png" ) );
+		// dead
+		Add_Image( pVideo->Get_Surface( "maryo/small/dead_left.png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/small/dead_right.png" ) );
+		// ducked
+		Add_Image( pVideo->Get_Surface( "maryo/flying/duck_left.png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/flying/duck_right.png" ) );
+		// climbing
+		Add_Image( pVideo->Get_Surface( "maryo/flying/climb_left.png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/flying/climb_right.png" ) );
+		// throwing
+		Add_Image( NULL );
+		Add_Image( NULL );
+		Add_Image( NULL );
+		Add_Image( NULL );
+		// flying
+		Add_Image( pVideo->Get_Surface( "maryo/flying/fly_left_1.png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/flying/fly_right_1.png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/flying/fly_left_2.png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/flying/fly_right_2.png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/flying/fly_left_3.png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/flying/fly_right_3.png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/flying/fly_left_4.png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/flying/fly_right_4.png" ) );
+		// slow fall/parachute
+		Add_Image( pVideo->Get_Surface( "maryo/flying/slow_fall_left.png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/flying/slow_fall_right.png" ) );
+        cp->Set_Image_Num( cp->Get_Image() + cp->m_direction );
     }
 	  void Action_Shoot(cPlayer& cp)
     {
@@ -771,7 +909,50 @@ class BIG_MARYO: public Type
     }
 	  void Load_Image(cPlayer& cp)
     {
-        return;
+	cp->Clear_Images();
+
+	// special maryo images state
+	std::string special_state;
+	// if holding item
+	if( cp->active_object )
+	{
+		special_state = "_holding";
+	}
+        Add_Image( pVideo->Get_Surface( "maryo/big/stand_left" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/big/stand_right" + special_state + ".png" ) );
+		// walking
+		Add_Image( pVideo->Get_Surface( "maryo/big/walk_left_1" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/big/walk_right_1" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/big/walk_left_2" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/big/walk_right_2" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/big/walk_left_1" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/big/walk_right_1" + special_state + ".png" ) );
+		// running
+		Add_Image( NULL );
+		Add_Image( NULL );
+		Add_Image( NULL );
+		Add_Image( NULL );
+		// falling
+		Add_Image( pVideo->Get_Surface( "maryo/big/fall_left" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/big/fall_right" + special_state + ".png" ) );
+		// jumping
+		Add_Image( pVideo->Get_Surface( "maryo/big/jump_left" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/big/jump_right" + special_state + ".png" ) );
+		// dead
+		Add_Image( pVideo->Get_Surface( "maryo/small/dead_left.png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/small/dead_right.png" ) );
+		// ducked
+		Add_Image( pVideo->Get_Surface( "maryo/big/duck_left.png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/big/duck_right.png" ) );
+		// climbing
+		Add_Image( pVideo->Get_Surface( "maryo/big/climb_left.png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/big/climb_right.png" ) );
+		// throwing
+		Add_Image( NULL );
+		Add_Image( NULL );
+		Add_Image( NULL );
+		Add_Image( NULL );
+        cp->Set_Image_Num( cp->Get_Image() + cp->m_direction );
     }
 	  void Action_Shoot(cPlayer& cp)
     {
@@ -932,7 +1113,50 @@ class FIRE_MARYO: public Type
     }
 	  void Load_Image(cPlayer& cp)
     {
-        return;
+	cp->Clear_Images();
+
+	// special maryo images state
+	std::string special_state;
+	// if holding item
+	if( cp->active_object )
+	{
+		special_state = "_holding";
+	}
+        Add_Image( pVideo->Get_Surface( "maryo/fire/stand_left" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/fire/stand_right" + special_state + ".png" ) );
+		// walking
+		Add_Image( pVideo->Get_Surface( "maryo/fire/walk_left_1" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/fire/walk_right_1" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/fire/walk_left_2" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/fire/walk_right_2" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/fire/walk_left_1" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/fire/walk_right_1" + special_state + ".png" ) );
+		// running
+		Add_Image( NULL );
+		Add_Image( NULL );
+		Add_Image( NULL );
+		Add_Image( NULL );
+		// falling
+		Add_Image( pVideo->Get_Surface( "maryo/fire/fall_left" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/fire/fall_right" + special_state + ".png" ) );
+		// jumping
+		Add_Image( pVideo->Get_Surface( "maryo/fire/jump_left" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/fire/fall_right" + special_state + ".png" ) );
+		// dead
+		Add_Image( pVideo->Get_Surface( "maryo/small/dead_left.png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/small/dead_right.png" ) );
+		// ducked
+		Add_Image( pVideo->Get_Surface( "maryo/fire/duck_left.png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/fire/duck_right.png" ) );
+		// climbing
+		Add_Image( pVideo->Get_Surface( "maryo/fire/climb_left.png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/fire/climb_right.png" ) );
+		// throwing
+		Add_Image( pVideo->Get_Surface( "maryo/fire/throw_left_1.png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/fire/throw_right_1.png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/fire/throw_left_2.png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/fire/throw_right_2.png" ) );
+        cp->Set_Image_Num( cp->Get_Image() + cp->m_direction );
     }
 	  void Action_Shoot(cPlayer& cp)
     {
@@ -984,7 +1208,7 @@ class ICE_MARYO: public Type
 	  int Get_Image(cPlayer& cp)
     {
     Maryo_type mState = cp->m_state;
-    if( cp->throwing_counter && !cp->ducked && ( mState == STA_FALL || mState == STA_STAY || mState == STA_WALK || mState == STA_RUN || mState == STA_JUMP ) )
+    if( cp->throwing_counter && !(cp->ducked) && ( mState == STA_FALL || mState == STA_STAY || mState == STA_WALK || mState == STA_RUN || mState == STA_JUMP ) )
 	{
 		int imgnum = 0;
 
@@ -1095,7 +1319,51 @@ class ICE_MARYO: public Type
     }
 	  void Load_Image(cPlayer& cp)
     {
-        return;
+	cp->Clear_Images();
+
+	// special maryo images state
+	std::string special_state;
+	// if holding item
+	if( cp->active_object )
+	{
+		special_state = "_holding";
+	}
+		Add_Image( pVideo->Get_Surface( "maryo/ice/stand_left" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/ice/stand_right" + special_state + ".png" ) );
+		// walking
+		Add_Image( pVideo->Get_Surface( "maryo/ice/walk_left_1" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/ice/walk_right_1" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/ice/walk_left_2" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/ice/walk_right_2" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/ice/walk_left_1" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/ice/walk_right_1" + special_state + ".png" ) );
+		// running
+		Add_Image( NULL );
+		Add_Image( NULL );
+		Add_Image( NULL );
+		Add_Image( NULL );
+		// falling
+		Add_Image( pVideo->Get_Surface( "maryo/ice/fall_left" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/ice/fall_right" + special_state + ".png" ) );
+		// jumping
+		Add_Image( pVideo->Get_Surface( "maryo/ice/jump_left" + special_state + ".png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/ice/fall_right" + special_state + ".png" ) );
+		// dead
+		Add_Image( pVideo->Get_Surface( "maryo/small/dead_left.png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/small/dead_right.png" ) );
+		// ducked
+		Add_Image( pVideo->Get_Surface( "maryo/ice/duck_left.png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/ice/duck_right.png" ) );
+		// climbing
+		Add_Image( pVideo->Get_Surface( "maryo/ice/climb_left.png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/ice/climb_right.png" ) );
+		// throwing
+		Add_Image( pVideo->Get_Surface( "maryo/ice/throw_left_1.png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/ice/throw_right_1.png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/ice/throw_left_2.png" ) );
+		Add_Image( pVideo->Get_Surface( "maryo/ice/throw_right_2.png" ) );
+		/****************************************************/
+        cp->Set_Image_Num( cp->Get_Image() + cp->m_direction );
     }
 	  void Action_Shoot(cPlayer& cp)
     {
