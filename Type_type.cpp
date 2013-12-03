@@ -2,6 +2,7 @@ class Type
 {
 public:
 	virtual ~type(cPlayer&) = 0;
+    virtual void Downgrade_Player(cPlayer&) = 0;
 	virtual void Start_Jump(cPlayer&)= 0;
 
 	virtual void Update_Item(cPlayer&)=0;
@@ -24,52 +25,54 @@ public:
 };
 class DEAD_MARYO: public Type
 {
-	  void Start_Jump(cPlayer&)
+    void Downgrade_Player(cPlayer& cp)
     {
         return;
     }
-	  void Update_Item(cPlayer&)
-    {
-        return;
-    }
-	 void Get_Item(cPlayer&)
+	  void Start_Jump(cPlayer& cp)
     {
         return;
     }
 
-	  void Set_Type(cPlayer&)
+	  void Update_Item(cPlayer& cp)
     {
         return;
     }
-	  void Update(cPlayer&)
+	 void Get_Item(cPlayer& cp)
     {
         return;
     }
-	  void Draw_Animation(cPlayer&)
+
+
+	  void Update(cPlayer& cp)
     {
         return;
     }
-	  void Get_Image(cPlayer&)
+	  void Draw_Animation(cPlayer& cp)
     {
         return;
     }
-	  void Load_Image(cPlayer&)
+	  void Get_Image(cPlayer& cp)
     {
         return;
     }
-	  void Action_Shoot(cPlayer&)
+	  void Load_Image(cPlayer& cp)
     {
         return;
     }
-	  void Ball_Add(cPlayer&)
+	  void Action_Shoot(cPlayer& cp)
     {
         return;
     }
-	  void Validate_Collision(cPlayer&)
+	  void Ball_Add(cPlayer& cp)
     {
         return;
     }
-	  void Handle_Collision_Enemy(cPlayer&)
+	  void Validate_Collision(cPlayer& cp)
+    {
+        return;
+    }
+	  void Handle_Collision_Enemy(cPlayer& cp)
     {
         return;
     }
@@ -77,51 +80,52 @@ class DEAD_MARYO: public Type
 
 class SMALL_MARYO: public Type
 {
-	  void Start_Jump(cPlayer&)
+    void Downgrade_Player(cPlayer& cp)
     {
         return;
     }
-	  void Update_Item(cPlayer&)
+	  void Start_Jump(cPlayer& cp)
     {
         return;
     }
-	void Get_Item(cPlayer&)
+
+	  void Update_Item(cPlayer& cp)
     {
         return;
     }
-	  void Set_Type(cPlayer&)
+	 void Get_Item(cPlayer& cp)
     {
         return;
     }
-	  void Update(cPlayer&)
+	  void Update(cPlayer& cp)
     {
         return;
     }
-	  void Draw_Animation(cPlayer&)
+	  void Draw_Animation(cPlayer& cp)
     {
         return;
     }
-	  void Get_Image(cPlayer&)
+	  void Get_Image(cPlayer& cp)
     {
         return;
     }
-	  void Load_Image(cPlayer&)
+	  void Load_Image(cPlayer& cp)
     {
         return;
     }
-	  void Action_Shoot(cPlayer&)
+	  void Action_Shoot(cPlayer& cp)
     {
         return;
     }
-	  void Ball_Add(cPlayer&)
+	  void Ball_Add(cPlayer& cp)
     {
         return;
     }
-	  void Validate_Collision(cPlayer&)
+	  void Validate_Collision(cPlayer& cp)
     {
         return;
     }
-	  void Handle_Collision_Enemy(cPlayer&)
+	  void Handle_Collision_Enemy(cPlayer& cp)
     {
         return;
     }
@@ -129,52 +133,54 @@ class SMALL_MARYO: public Type
 
 class GHOST_MARYO: public Type
 {
-	  void Start_Jump(cPlayer&)
+    void Downgrade_Player(cPlayer& cp)
     {
         return;
     }
-	  void Update_Item(cPlayer&)
-    {
-        return;
-    }
-	  void Get_Item(cPlayer&)
+	  void Start_Jump(cPlayer& cp)
     {
         return;
     }
 
-	  void Set_Type(cPlayer&)
+	  void Update_Item(cPlayer& cp)
     {
         return;
     }
-	  void Update(cPlayer&)
+	 void Get_Item(cPlayer& cp)
     {
         return;
     }
-	  void Draw_Animation(cPlayer&)
+
+
+	  void Update(cPlayer& cp)
     {
         return;
     }
-	  void Get_Image(cPlayer&)
+	  void Draw_Animation(cPlayer& cp)
     {
         return;
     }
-	  void Load_Image(cPlayer&)
+	  void Get_Image(cPlayer& cp)
     {
         return;
     }
-	  void Action_Shoot(cPlayer&)
+	  void Load_Image(cPlayer& cp)
     {
         return;
     }
-	  void Ball_Add(cPlayer&)
+	  void Action_Shoot(cPlayer& cp)
     {
         return;
     }
-	  void Validate_Collision(cPlayer&)
+	  void Ball_Add(cPlayer& cp)
     {
         return;
     }
-	  void Handle_Collision_Enemy(cPlayer&)
+	  void Validate_Collision(cPlayer& cp)
+    {
+        return;
+    }
+	  void Handle_Collision_Enemy(cPlayer& cp)
     {
         return;
     }
@@ -182,51 +188,54 @@ class GHOST_MARYO: public Type
 
 class CAPE_MARYO: public Type
 {
-	  void Start_Jump(cPlayer&)
+     void Downgrade_Player(cPlayer& cp)
     {
         return;
     }
-	  void Update_Item(cPlayer&)
+	  void Start_Jump(cPlayer& cp)
     {
         return;
     }
-	void Get_Item(cPlayer&)
+
+	  void Update_Item(cPlayer& cp)
     {
         return;
     }
-	  void Set_Type(cPlayer&)
+	 void Get_Item(cPlayer& cp)
     {
         return;
     }
-	  void Update(cPlayer&)
+
+
+	  void Update(cPlayer& cp)
     {
         return;
     }
-	  void Draw_Animation(cPlayer&)
+	  void Draw_Animation(cPlayer& cp)
     {
         return;
     }
-	  void Get_Image(cPlayer&)
+	  void Get_Image(cPlayer& cp)
     {
         return;
     }
-	  void Load_Image(cPlayer&)
+	  void Load_Image(cPlayer& cp)
     {
         return;
     }
-	  void Action_Shoot(cPlayer&)
+	  void Action_Shoot(cPlayer& cp)
     {
         return;
     }
-	  void Ball_Add(cPlayer&)
+	  void Ball_Add(cPlayer& cp)
     {
         return;
     }
-	  void Validate_Collision(cPlayer&)
+	  void Validate_Collision(cPlayer& cp)
     {
         return;
     }
-	  void Handle_Collision_Enemy(cPlayer&)
+	  void Handle_Collision_Enemy(cPlayer& cp)
     {
         return;
     }
@@ -234,51 +243,54 @@ class CAPE_MARYO: public Type
 
 class BIG_MARYO: public Type
 {
-	  void Start_Jump(cPlayer&)
+    void Downgrade_Player(cPlayer& cp)
     {
         return;
     }
-	  void Update_Item(cPlayer&)
+	  void Start_Jump(cPlayer& cp)
     {
         return;
     }
-	void Get_Item(cPlayer&)
+
+	  void Update_Item(cPlayer& cp)
     {
         return;
     }
-	  void Set_Type(cPlayer&)
+	 void Get_Item(cPlayer& cp)
     {
         return;
     }
-	  void Update(cPlayer&)
+
+
+	  void Update(cPlayer& cp)
     {
         return;
     }
-	  void Draw_Animation(cPlayer&)
+	  void Draw_Animation(cPlayer& cp)
     {
         return;
     }
-	  void Get_Image(cPlayer&)
+	  void Get_Image(cPlayer& cp)
     {
         return;
     }
-	  void Load_Image(cPlayer&)
+	  void Load_Image(cPlayer& cp)
     {
         return;
     }
-	  void Action_Shoot(cPlayer&)
+	  void Action_Shoot(cPlayer& cp)
     {
         return;
     }
-	  void Ball_Add(cPlayer&)
+	  void Ball_Add(cPlayer& cp)
     {
         return;
     }
-	  void Validate_Collision(cPlayer&)
+	  void Validate_Collision(cPlayer& cp)
     {
         return;
     }
-	  void Handle_Collision_Enemy(cPlayer&)
+	  void Handle_Collision_Enemy(cPlayer& cp)
     {
         return;
     }
@@ -286,51 +298,54 @@ class BIG_MARYO: public Type
 
 class FIRE_MARYO: public Type
 {
-	  void Start_Jump(cPlayer&)
+    void Downgrade_Player(cPlayer& cp)
     {
         return;
     }
-	  void Update_Item(cPlayer&)
+	  void Start_Jump(cPlayer& cp)
     {
         return;
     }
-	void Get_Item(cPlayer&)
+
+	  void Update_Item(cPlayer& cp)
     {
         return;
     }
-	  void Set_Type(cPlayer&)
+	 void Get_Item(cPlayer& cp)
     {
         return;
     }
-	  void Update(cPlayer&)
+
+
+	  void Update(cPlayer& cp)
     {
         return;
     }
-	  void Draw_Animation(cPlayer&)
+	  void Draw_Animation(cPlayer& cp)
     {
         return;
     }
-	  void Get_Image(cPlayer&)
+	  void Get_Image(cPlayer& cp)
     {
         return;
     }
-	  void Load_Image(cPlayer&)
+	  void Load_Image(cPlayer& cp)
     {
         return;
     }
-	  void Action_Shoot(cPlayer&)
+	  void Action_Shoot(cPlayer& cp)
     {
         return;
     }
-	  void Ball_Add(cPlayer&)
+	  void Ball_Add(cPlayer& cp)
     {
         return;
     }
-	  void Validate_Collision(cPlayer&)
+	  void Validate_Collision(cPlayer& cp)
     {
         return;
     }
-	  void Handle_Collision_Enemy(cPlayer&)
+	  void Handle_Collision_Enemy(cPlayer& cp)
     {
         return;
     }
@@ -338,51 +353,54 @@ class FIRE_MARYO: public Type
 
 class ICE_MARYO: public Type
 {
-	  void Start_Jump(cPlayer&)
+    void Downgrade_Player(cPlayer& cp)
     {
         return;
     }
-	  void Update_Item(cPlayer&)
+	  void Start_Jump(cPlayer& cp)
     {
         return;
     }
-	void Get_Item(cPlayer&)
+
+	  void Update_Item(cPlayer& cp)
     {
         return;
     }
-	  void Set_Type(cPlayer&)
+	 void Get_Item(cPlayer& cp)
     {
         return;
     }
-	  void Update(cPlayer&)
+
+
+	  void Update(cPlayer& cp)
     {
         return;
     }
-	  void Draw_Animation(cPlayer&)
+	  void Draw_Animation(cPlayer& cp)
     {
         return;
     }
-	  void Get_Image(cPlayer&)
+	  void Get_Image(cPlayer& cp)
     {
         return;
     }
-	  void Load_Image(cPlayer&)
+	  void Load_Image(cPlayer& cp)
     {
         return;
     }
-	  void Action_Shoot(cPlayer&)
+	  void Action_Shoot(cPlayer& cp)
     {
         return;
     }
-	  void Ball_Add(cPlayer&)
+	  void Ball_Add(cPlayer& cp)
     {
         return;
     }
-	  void Validate_Collision(cPlayer&)
+	  void Validate_Collision(cPlayer& cp)
     {
         return;
     }
-	  void Handle_Collision_Enemy(cPlayer&)
+	  void Handle_Collision_Enemy(cPlayer& cp)
     {
         return;
     }
