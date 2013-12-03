@@ -84,7 +84,7 @@ class DEAD_MARYO: public Type
 		// set to current type
 		if( i % 2 )
 		{
-			cp->maryo_type = maryo_type_old;
+			maryo_type = maryo_type_old;
 			cp->parachute = parachute_old;
 			Load_Images();
 			
@@ -93,7 +93,7 @@ class DEAD_MARYO: public Type
 		// set to new type
 		else
 		{
-			cp->maryo_type = new_mtype;
+			maryo_type = new_mtype;
 			if( new_mtype != MARYO_CAPE )
 			{
 				cp->parachute = 0;
